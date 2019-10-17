@@ -1,5 +1,5 @@
 {% set name = "hyperopt" %}
-{% set version = "0.1.2" %}
+{% set version = "0.2.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/hyperopt/{{ name }}/archive/{{ version }}.tar.gz
-  sha256: fa69c428ceabf2f5082d868eda74720a021d7822afb6483de26a5e576237891a
+  sha256: 8b991f41870f5d115a553de7ac208ccc92cfe6fd78ac94db2ebe363ceedd8abe
 
 build:
   noarch: python
