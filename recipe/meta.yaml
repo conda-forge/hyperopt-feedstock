@@ -27,6 +27,7 @@ requirements:
     - networkx
     - future
     - tqdm
+    - setuptools
 
 test:
     imports:
