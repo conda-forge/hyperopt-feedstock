@@ -27,6 +27,8 @@ requirements:
     - networkx
     - future
     - tqdm
+    - setuptools
+    - cloudpickle    
 
 test:
     imports:
