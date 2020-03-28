@@ -1,5 +1,5 @@
 {% set name = "hyperopt" %}
-{% set version = "0.2.2" %}
+{% set version = "0.2.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/hyperopt/{{ name }}/archive/{{ version }}.tar.gz
-  sha256: 91672206e7048c256ddff55a1ca4def95bb3d9199ead71605dba9a9c1ef29abf
+  sha256: df450eadfc9541086921bf863a5842e7009faef472b08630fd2cab13cdcfe0e6
 
 build:
   noarch: python
@@ -24,7 +24,7 @@ requirements:
     - scipy
     - pymongo
     - six
-    - networkx
+    - networkx >=2.2
     - future
     - tqdm
     - setuptools
