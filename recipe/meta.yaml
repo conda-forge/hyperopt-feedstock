@@ -1,5 +1,5 @@
 {% set name = "hyperopt" %}
-{% set version = "0.2.3" %}
+{% set version = "0.2.4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: df450eadfc9541086921bf863a5842e7009faef472b08630fd2cab13cdcfe0e6
+  sha256: 6e72089a42eb70cf84b0567d4552a908adff7cfc5cf6b1c38add41adc775d9c6
 
 build:
   noarch: python
   number: 0
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
+  script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
 
 requirements:
   host:
@@ -28,23 +28,23 @@ requirements:
     - future
     - tqdm
     - setuptools
-    - cloudpickle    
+    - cloudpickle
 
 test:
-    imports:
-        - hyperopt
-        - hyperopt.fmin
-        - hyperopt.hp
-        - hyperopt.tpe
-        - hyperopt.pyll
-        - hyperopt.pyll.stochastic
+  imports:
+    - hyperopt
+    - hyperopt.fmin
+    - hyperopt.hp
+    - hyperopt.tpe
+    - hyperopt.pyll
+    - hyperopt.pyll.stochastic
 
 about:
   home: https://github.com/hyperopt/hyperopt
   license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE.txt
-  summary: 'Distributed Asynchronous Hyper-parameter Optimization'
+  summary: Distributed Asynchronous Hyper-parameter Optimization
   description: |
     Hyperopt is a Python library for serial and parallel optimization over awkward search spaces, 
     which may include real-valued, discrete, and conditional dimensions.
