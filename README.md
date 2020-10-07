@@ -5,9 +5,13 @@ Home: https://github.com/hyperopt/hyperopt
 
 Package license: BSD-3-Clause
 
-Feedstock license: BSD 3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/hyperopt-feedstock/blob/master/LICENSE.txt)
 
 Summary: Distributed Asynchronous Hyper-parameter Optimization
+
+Development: https://github.com/hyperopt/hyperopt
+
+Documentation: http://hyperopt.github.io/hyperopt/
 
 Hyperopt is a Python library for serial and parallel optimization over awkward search spaces,
 which may include real-valued, discrete, and conditional dimensions.
