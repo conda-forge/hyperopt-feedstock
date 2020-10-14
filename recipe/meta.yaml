@@ -1,5 +1,5 @@
 {% set name = "hyperopt" %}
-{% set version = "0.2.4" %}
+{% set version = "0.2.5" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 6e72089a42eb70cf84b0567d4552a908adff7cfc5cf6b1c38add41adc775d9c6
+  sha256: bc6047d50f956ae64eebcb34b1fd40f186a93e214957f20e87af2f10195295cc
 
 build:
   noarch: python
