@@ -1,43 +1,44 @@
 {% set name = "hyperopt" %}
-{% set version = "0.2.5" %}
+{% set version = "0.2.7" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: bc6047d50f956ae64eebcb34b1fd40f186a93e214957f20e87af2f10195295cc
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/hyperopt-{{ version }}.tar.gz
+  sha256: 1bf89ae58050bbd32c7307199046117feee245c2fd9ab6255c7308522b7ca149
 
 build:
+  entry_points:
+    - hyperopt-mongo-worker=hyperopt.mongoexp:main
   noarch: python
+  script: {{ PYTHON }} -m pip install . -vv
   number: 0
-  script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
 
 requirements:
   host:
-    - python
     - pip
+    - python >=3.6
   run:
-    - python
-    - numpy
-    - scipy
-    - pymongo
-    - six
-    - networkx >=2.2
-    - future
-    - tqdm
-    - setuptools
     - cloudpickle
+    - future
+    - networkx >=2.2
+    - numpy >=1.17
+    - py4j
+    - python >=3.6
+    - scipy
+    - six
+    - tqdm
 
 test:
   imports:
     - hyperopt
-    - hyperopt.fmin
-    - hyperopt.hp
-    - hyperopt.tpe
-    - hyperopt.pyll
-    - hyperopt.pyll.stochastic
+  commands:
+    - pip check
+    - hyperopt-mongo-worker --help
+  requires:
+    - pip
 
 about:
   home: https://github.com/hyperopt/hyperopt
@@ -46,7 +47,7 @@ about:
   license_file: LICENSE.txt
   summary: Distributed Asynchronous Hyper-parameter Optimization
   description: |
-    Hyperopt is a Python library for serial and parallel optimization over awkward search spaces, 
+    Hyperopt is a Python library for serial and parallel optimization over awkward search spaces,
     which may include real-valued, discrete, and conditional dimensions.
   doc_url: http://hyperopt.github.io/hyperopt/
   dev_url: https://github.com/hyperopt/hyperopt
@@ -54,3 +55,4 @@ about:
 extra:
   recipe-maintainers:
     - PhilipMay
+    - BastianZim
