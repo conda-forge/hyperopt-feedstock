@@ -20,6 +20,8 @@ requirements:
   host:
     - pip
     - python {{ python_min }}
+    - hatchling
+    - hatch-vcs
   run:
     - cloudpickle
     - future
