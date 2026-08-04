@@ -1,5 +1,5 @@
 {% set name = "hyperopt" %}
-{% set version = "0.2.7" %}
+{% set version = "0.3.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,19 +7,21 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/hyperopt-{{ version }}.tar.gz
-  sha256: 1bf89ae58050bbd32c7307199046117feee245c2fd9ab6255c7308522b7ca149
+  sha256: d79a77522fefec13a258b97a0ccbdf40832b3270de4db08278bb07b9b934eb9a
 
 build:
   entry_points:
     - hyperopt-mongo-worker=hyperopt.mongoexp:main
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 1
+  number: 0
 
 requirements:
   host:
     - pip
     - python {{ python_min }}
+    - hatchling
+    - hatch-vcs
   run:
     - cloudpickle
     - future
